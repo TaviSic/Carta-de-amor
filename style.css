@@ -1,0 +1,93 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #D2B9D6;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    width: 400px;
+    height: 200px;
+}
+
+.heart {
+    width: 100px;
+    height: 90px;
+    background-color: red;
+    position: absolute;
+    top: -85px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-45deg);
+    transform-origin: center;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 100px;
+    height: 90px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::before {
+    top: -50px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 50px;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1) translateX(-50%) rotate(-45deg);
+    }
+    50% {
+        transform: scale(1.2) translateX(-50%) rotate(-45deg);
+    }
+}
+
+.heart {
+    animation: heartbeat 1.5s infinite;
+}
+
+.letter h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.letter .message {
+    font-size: 16px;
+    color: #555;
+    margin: 20px 0;
+    animation: fadeIn 3s ease-in-out;
+}
+
+.letter .signature {
+    font-size: 14px;
+    color: #777;
+    margin-top: 20px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate;}
+    }
